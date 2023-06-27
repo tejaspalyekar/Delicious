@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodordering/screens/categories.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,47 +21,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: theme,
-      home: Scaffold(
-        appBar: AppBar(
-          elevation: 5,
-          centerTitle: true,
-          title: const Text("IndiaEat",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-              )),
-        ),
-        body: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 3 / 2),
-            children: [
-              Container(
-                  color: Colors.white,
-                  child: const Text(
-                    "1",
-                  )),
-              Container(
-                  color: Colors.white,
-                  child: const Text(
-                    "2",
-                  )),
-              Container(
-                  color: Colors.white,
-                  child: const Text(
-                    "3",
-                  )),
-              Container(
-                  color: Colors.white,
-                  child: const Text(
-                    "4",
-                  )),
-            ]),
-      ),
-    );
+    return MaterialApp(theme: theme, home: CategoryScreen());
   }
 }
