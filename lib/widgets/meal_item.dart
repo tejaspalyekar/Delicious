@@ -1,20 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:foodordering/models/meals.dart';
+import 'package:foodordering/widgets/item_details.dart';
+import 'package:foodordering/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class mealItem extends StatelessWidget {
   const mealItem({super.key, required this.meals});
   final Meal meals;
 
+  String get complexity {
+    return meals.complexity.name[0].toUpperCase() +
+        meals.complexity.name.substring(1);
+  }
+
+  String get affordability {
+    return meals.affordability.name[0].toUpperCase() +
+        meals.affordability.name.substring(1);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       clipBehavior: Clip.hardEdge,
       elevation: 3,
       child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ItemDetails(meals: meals),
+                ));
+          },
           child: Stack(
             children: [
               FadeInImage(
@@ -49,7 +67,18 @@ class mealItem extends StatelessWidget {
                           height: 12,
                         ),
                         Row(
-                          children: [],
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            MealItemTrait(
+                                icon: Icons.access_time,
+                                label: '${meals.duration}' 'mins'),
+                            const SizedBox(width: 12),
+                            MealItemTrait(icon: Icons.work, label: complexity),
+                            const SizedBox(width: 15),
+                            MealItemTrait(
+                                icon: Icons.attach_money_rounded,
+                                label: affordability),
+                          ],
                         )
                       ],
                     ),

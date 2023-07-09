@@ -4,8 +4,8 @@ import 'package:foodordering/models/meals.dart';
 import 'package:foodordering/widgets/meal_item.dart';
 
 class MealScreen extends StatelessWidget {
-  const MealScreen({super.key, required this.title, required this.meal});
-  final String title;
+  const MealScreen({super.key, this.title, required this.meal});
+  final String? title;
   final List<Meal> meal;
   @override
   Widget build(BuildContext context) {
@@ -34,9 +34,12 @@ class MealScreen extends StatelessWidget {
         ),
       );
     }
+    if (title == null) {
+      return content;
+    }
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title!),
       ),
       body: content,
     );

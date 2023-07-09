@@ -24,55 +24,47 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 5,
-          centerTitle: true,
-          title: Text("IndiaEat",
-              style: GoogleFonts.bevan(
-                fontSize: 40,
-              )),
-        ),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(
-                  width: double.infinity,
-                  height: 260,
-                  child: Image(image: AssetImage('assets/header.jpg'))),
-              SizedBox(
-                  height: 50,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Text(
-                      "What's in your mind?",
-                      style: GoogleFonts.niramit(
-                          fontSize: 25,
-                          color: const Color.fromARGB(255, 255, 255, 255),
-                          fontWeight: FontWeight.w600),
-                    ),
-                  )),
-              SizedBox(
-                height: 300,
-                width: double.infinity,
-                child: GridView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.all(10),
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 250,
-                    childAspectRatio: 0.6,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                  ),
-                  children: [
-                    for (final category in availableCategories)
-                      CategoryGrid(
-                          category: category,
-                          onselect: () => onclick(context, category))
-                  ],
+      child: Column(
+        children: [
+          const SizedBox(
+              width: double.infinity,
+              height: 260,
+              child: Image(image: AssetImage('assets/header.jpg'))),
+          SizedBox(
+              height: 50,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text(
+                  "What's in your mind?",
+                  style: GoogleFonts.niramit(
+                      fontSize: 25,
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                      fontWeight: FontWeight.w600),
                 ),
+              )),
+          SizedBox(
+            height: 300,
+            width: double.infinity,
+            child: GridView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.all(10),
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 250,
+                childAspectRatio: 0.6,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
               ),
-            ],
+              children: [
+                for (final category in availableCategories)
+                  CategoryGrid(
+                      category: category,
+                      onselect: () => onclick(context, category))
+              ],
+            ),
           ),
-        ));
+        ],
+      ),
+    ));
   }
 }
