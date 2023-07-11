@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodordering/models/meals.dart';
 import 'package:foodordering/screens/categories.dart';
 import 'package:foodordering/screens/meal.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,13 +21,49 @@ class TabScreeen extends State<Tabs> {
     });
   }
 
+  final List<Meal> fav = [];
+
+  void toast(String msg) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(
+        msg,
+        style: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      showCloseIcon: true,
+      dismissDirection: DismissDirection.horizontal,
+      backgroundColor: const Color.fromARGB(255, 214, 214, 214),
+    ));
+  }
+
+  void ontoggle(Meal meal) {
+    final check = fav.contains(meal);
+    setState(() {
+      if (check) {
+        fav.remove(meal);
+        toast("${meal.title} removed from favourite");
+      } else {
+        fav.add(meal);
+        toast("${meal.title} Added to favourite");
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    Widget screen = const CategoryScreen();
+    Widget screen = CategoryScreen(
+      ontoggle: ontoggle,
+    );
     String title = "IndiaEat";
     if (idx == 1) {
-      screen = const MealScreen(meal: []);
-      title = "Your Favourit";
+      screen = MealScreen(
+        meal: fav,
+        ontoggle: ontoggle,
+      );
+      title = "Your Favourits";
     }
     return Scaffold(
       appBar: AppBar(

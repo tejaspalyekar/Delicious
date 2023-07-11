@@ -5,9 +5,9 @@ import 'package:foodordering/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class mealItem extends StatelessWidget {
-  const mealItem({super.key, required this.meals});
+  const mealItem({super.key, required this.meals, required this.ontoggle});
   final Meal meals;
-
+  final void Function(Meal meal) ontoggle;
   String get complexity {
     return meals.complexity.name[0].toUpperCase() +
         meals.complexity.name.substring(1);
@@ -30,7 +30,8 @@ class mealItem extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ItemDetails(meals: meals),
+                  builder: (context) =>
+                      ItemDetails(meals: meals, ontoggle: ontoggle),
                 ));
           },
           child: Stack(

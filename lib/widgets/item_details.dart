@@ -3,15 +3,27 @@ import 'package:foodordering/models/meals.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ItemDetails extends StatelessWidget {
-  const ItemDetails({super.key, required this.meals});
+  ItemDetails({
+    super.key,
+    required this.meals,
+    required this.ontoggle,
+  });
   final Meal meals;
-
+  final void Function(Meal meals) ontoggle;
   @override
   Widget build(BuildContext context) {
-    int no = 0;
     return Scaffold(
       appBar: AppBar(
         title: Text(meals.title),
+        actions: [
+          IconButton(
+            onPressed: () {
+              ontoggle(meals);
+            },
+            icon: const Icon(Icons.star),
+            color: Colors.amber,
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

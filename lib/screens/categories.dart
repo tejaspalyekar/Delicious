@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:foodordering/data/dummy_data.dart';
 import 'package:foodordering/models/category.dart';
+import 'package:foodordering/models/meals.dart';
 import 'package:foodordering/widgets/category_grid_item.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:foodordering/screens/meal.dart';
 
 class CategoryScreen extends StatelessWidget {
-  const CategoryScreen({super.key});
-
+  const CategoryScreen({super.key, required this.ontoggle});
+  final void Function(Meal meal) ontoggle;
   void onclick(BuildContext context, Category category) {
     final current = dummyMeals
         .where((meal) => meal.categories.contains(category.id))
@@ -18,6 +19,7 @@ class CategoryScreen extends StatelessWidget {
             builder: (ctx) => MealScreen(
                   meal: current,
                   title: category.title,
+                  ontoggle: ontoggle,
                 )));
   }
 
