@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodordering/models/meals.dart';
+import 'package:foodordering/screens/blogs.dart';
 import 'package:foodordering/screens/categories.dart';
 import 'package:foodordering/screens/meal.dart';
+import 'package:foodordering/widgets/main_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Tabs extends StatefulWidget {
@@ -52,6 +54,19 @@ class TabScreeen extends State<Tabs> {
     });
   }
 
+  void onselect(String str) {
+    if (str == "filter") {
+    } else if (str == "blogs") {
+      Navigator.pop(context);
+      Navigator.of(context).push(DialogRoute(
+        context: context,
+        builder: (context) => blogs(apptitle: str),
+      ));
+    } else {
+      Navigator.of(context).pop();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget screen = CategoryScreen(
@@ -76,6 +91,7 @@ class TabScreeen extends State<Tabs> {
                   )
                 : const TextStyle(fontSize: 25)),
       ),
+      drawer: Maindrawer(onselect: onselect),
       body: screen,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: idx,

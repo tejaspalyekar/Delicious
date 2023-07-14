@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodordering/models/category.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class CategoryGrid extends StatelessWidget {
   const CategoryGrid(
@@ -8,31 +9,40 @@ class CategoryGrid extends StatelessWidget {
   final void Function() onselect;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onselect,
-      splashColor: const Color.fromARGB(255, 240, 211, 118),
-      borderRadius: BorderRadius.circular(20),
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                category.color.withOpacity(0.55),
-                category.color.withOpacity(0.9)
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            border: Border.all(color: const Color.fromARGB(255, 53, 20, 2)),
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
-        child: Center(
-          child: Text(
-            category.title,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground,
-                ),
+    return Card(
+      clipBehavior: Clip.hardEdge,
+      elevation: 1,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      child: InkWell(
+        onTap: onselect,
+        splashColor: const Color.fromARGB(255, 240, 211, 118),
+        child: Stack(children: [
+          FadeInImage(
+            placeholder: MemoryImage(kTransparentImage),
+            image: NetworkImage(category.imageUrl!),
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: 200,
           ),
-        ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            left: 0,
+            child: Container(
+              color: const Color.fromARGB(103, 0, 0, 0),
+              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 44),
+              child: Text(
+                category.title,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground,
+                    ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }
