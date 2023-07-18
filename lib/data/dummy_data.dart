@@ -6,12 +6,13 @@ import 'package:foodordering/models/meals.dart';
 // Constants in Dart should be written in lowerCamelcase.
 const availableCategories = [
   Category(
-    id: 'c1',
-    title: 'Italian',
-    color: Colors.purple,
-    imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
-  ),
+      id: 'c1',
+      title: 'Italian',
+      color: Colors.purple,
+      imageUrl:
+          'https://c.ndtvimg.com/2021-04/umk8i7ko_pasta_625x300_01_April_21.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=886'
+      //'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+      ),
   Category(
     id: 'c2',
     title: 'Quick & Easy',
@@ -24,7 +25,7 @@ const availableCategories = [
     title: 'Hamburgers',
     color: Colors.orange,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
+        'https://static.onecms.io/wp-content/uploads/sites/19/2005/06/22/classic-burgers-u.jpg',
   ),
   Category(
     id: 'c4',

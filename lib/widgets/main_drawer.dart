@@ -21,7 +21,7 @@ class Maindrawer extends StatelessWidget {
                 width: 10,
               ),
               Text(
-                "Recipe App..",
+                "delicious..",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 30,
