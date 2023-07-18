@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodordering/models/meals.dart';
 import 'package:foodordering/screens/blogs.dart';
 import 'package:foodordering/screens/categories.dart';
+import 'package:foodordering/screens/filter.dart';
 import 'package:foodordering/screens/meal.dart';
 import 'package:foodordering/widgets/main_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,15 +56,18 @@ class TabScreeen extends State<Tabs> {
   }
 
   void onselect(String str) {
+    Navigator.pop(context);
     if (str == "filter") {
+      final filterdata = Navigator.of(context).push(DialogRoute(
+        context: context,
+        builder: (context) => Filters(),
+      ));
+      print(filterdata);
     } else if (str == "blogs") {
-      Navigator.pop(context);
       Navigator.of(context).push(DialogRoute(
         context: context,
         builder: (context) => blogs(apptitle: str),
       ));
-    } else {
-      Navigator.of(context).pop();
     }
   }
 
@@ -72,7 +76,7 @@ class TabScreeen extends State<Tabs> {
     Widget screen = CategoryScreen(
       ontoggle: ontoggle,
     );
-    String title = "IndiaEat";
+    String title = "Delicious";
     if (idx == 1) {
       screen = MealScreen(
         meal: fav,
