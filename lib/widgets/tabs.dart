@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:foodordering/data/dummy_data.dart';
 import 'package:foodordering/models/meals.dart';
 import 'package:foodordering/screens/blogs.dart';
 import 'package:foodordering/screens/categories.dart';
 import 'package:foodordering/screens/filter.dart';
 import 'package:foodordering/screens/meal.dart';
 import 'package:foodordering/widgets/main_drawer.dart';
+import 'package:foodordering/widgets/meal_item.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+Map<Filter, bool> kselectedFilters = {
+  Filter.glutenFree: false,
+  Filter.lactosFree: false,
+  Filter.vegan: false,
+  Filter.vegetarian: false,
+};
 
 class Tabs extends StatefulWidget {
   const Tabs({super.key});
@@ -25,6 +34,7 @@ class TabScreeen extends State<Tabs> {
   }
 
   final List<Meal> fav = [];
+  Map<Filter, bool> selectedFilters = kselectedFilters;
 
   void toast(String msg) {
     ScaffoldMessenger.of(context).clearSnackBars();
@@ -55,14 +65,17 @@ class TabScreeen extends State<Tabs> {
     });
   }
 
-  void onselect(String str) {
+  void onselect(String str) async {
     Navigator.pop(context);
     if (str == "filter") {
-      final filterdata = Navigator.of(context).push(DialogRoute(
+      final filterdata =
+          await Navigator.of(context).push<Map<Filter, bool>>(DialogRoute(
         context: context,
-        builder: (context) => Filters(),
+        builder: (context) => const Filters(),
       ));
-      print(filterdata);
+      setState(() {
+        selectedFilters = filterdata ?? selectedFilters;
+      });
     } else if (str == "blogs") {
       Navigator.of(context).push(DialogRoute(
         context: context,
@@ -73,7 +86,23 @@ class TabScreeen extends State<Tabs> {
 
   @override
   Widget build(BuildContext context) {
+    final availmeals = dummyMeals.where((element) {
+      if (selectedFilters[Filter.glutenFree]! && !element.isGlutenFree) {
+        return false;
+      }
+      if (selectedFilters[Filter.lactosFree]! && !element.isLactoseFree) {
+        return false;
+      }
+      if (selectedFilters[Filter.vegan]! && !element.isVegan) {
+        return false;
+      }
+      if (selectedFilters[Filter.vegetarian]! && !element.isVegetarian) {
+        return false;
+      }
+      return true;
+    }).toList();
     Widget screen = CategoryScreen(
+      availableMeals: availmeals,
       ontoggle: ontoggle,
     );
     String title = "Delicious";

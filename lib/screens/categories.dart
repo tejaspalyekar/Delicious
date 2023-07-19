@@ -7,10 +7,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:foodordering/screens/meal.dart';
 
 class CategoryScreen extends StatelessWidget {
-  const CategoryScreen({super.key, required this.ontoggle});
+  const CategoryScreen(
+      {super.key, required this.ontoggle, required this.availableMeals});
   final void Function(Meal meal) ontoggle;
+  final List<Meal> availableMeals;
   void onclick(BuildContext context, Category category) {
-    final current = dummyMeals
+    final current = availableMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
     Navigator.push(

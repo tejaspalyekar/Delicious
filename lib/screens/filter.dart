@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 enum Filter { glutenFree, lactosFree, vegetarian, vegan }
 
+bool gstates = false;
+bool lstates = false;
+bool vegstates = false;
+bool veganstates = false;
+
 class Filters extends StatefulWidget {
   const Filters({
     super.key,
@@ -14,22 +19,17 @@ class Filters extends StatefulWidget {
 }
 
 class FilterState extends State<Filters> {
-  bool? gstates = false;
-  bool? lstates = false;
-  bool? vegstates = false;
-  bool? veganstates = false;
   void cstate(value, String filter) {
-    setState(() {
-      if (filter == "gluteen") {
-        gstates = value;
-      } else if (filter == "lactos") {
-        lstates = value;
-      } else if (filter == "veg") {
-        vegstates = value;
-      } else {
-        veganstates = value;
-      }
-    });
+    if (filter == "gluteen") {
+      gstates = value;
+    } else if (filter == "lactos") {
+      lstates = value;
+    } else if (filter == "veg") {
+      vegstates = value;
+    } else {
+      veganstates = value;
+    }
+    setState(() {});
   }
 
   @override
@@ -53,7 +53,7 @@ class FilterState extends State<Filters> {
         body: Column(
           children: [
             SwitchListTile(
-              value: gstates!,
+              value: gstates,
               onChanged: (value) => cstate(value, "gluteen"),
               title: Text("Gluteen Free",
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -65,7 +65,7 @@ class FilterState extends State<Filters> {
                       )),
             ),
             SwitchListTile(
-              value: lstates!,
+              value: lstates,
               onChanged: (value) => cstate(value, "lactos"),
               title: Text("Lactos Free",
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -77,7 +77,7 @@ class FilterState extends State<Filters> {
                       )),
             ),
             SwitchListTile(
-              value: vegstates!,
+              value: vegstates,
               onChanged: (value) => cstate(value, "veg"),
               title: Text("Vegeterian",
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -89,7 +89,7 @@ class FilterState extends State<Filters> {
                       )),
             ),
             SwitchListTile(
-              value: veganstates!,
+              value: veganstates,
               onChanged: (value) => cstate(value, "vegan"),
               title: Text("Vegan",
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
