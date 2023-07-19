@@ -16,11 +16,12 @@ class ReuseabletextField extends StatefulWidget {
 }
 
 class _ReuseabletextFieldState extends State<ReuseabletextField> {
+  bool pass = true;
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: widget.controller,
-      obscureText: widget.isPasswordType,
+      obscureText: widget.isPasswordType ? pass : false,
       enableSuggestions: !widget.isPasswordType,
       autocorrect: !widget.isPasswordType,
       cursorColor: Colors.white,
@@ -29,10 +30,15 @@ class _ReuseabletextFieldState extends State<ReuseabletextField> {
       decoration: InputDecoration(
         prefixIcon: Icon(widget.icon, color: Colors.white70),
         suffixIcon: widget.isPasswordType
-            ? const Icon(
-                Icons.remove_red_eye,
-                color: Colors.white,
-              )
+            ? IconButton(
+                onPressed: () {
+                  pass = pass ? false : true;
+                  setState(() {});
+                },
+                icon: const Icon(
+                  Icons.remove_red_eye,
+                  color: Colors.white,
+                ))
             : const Text(""),
         labelText: widget.text,
         labelStyle: TextStyle(
