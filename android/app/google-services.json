@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "140594092713",
+    "project_id": "delicious-7d645",
+    "storage_bucket": "delicious-7d645.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140594092713:android:f9a4123d46f07a9ce8e7b8",
+        "android_client_info": {
+          "package_name": "com.example.foodordering"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140594092713-khj3d28m2s3jt39jkrg8nb488sqqmgrb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.foodordering",
+            "certificate_hash": "9dd858433c618f37ede6f9ed02360bf23310ecfb"
+          }
+        },
+        {
+          "client_id": "140594092713-an3i49p45j0p8e9qhuai9u9m99fkt2jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC8mR35ogeUHdQy8L8I0JRFRnqbSJuy-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140594092713-an3i49p45j0p8e9qhuai9u9m99fkt2jc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

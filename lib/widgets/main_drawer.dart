@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:foodordering/screens/signIn.dart';
 
 class Maindrawer extends StatelessWidget {
   const Maindrawer({super.key, required this.onselect});
@@ -69,6 +71,26 @@ class Maindrawer extends StatelessWidget {
             ),
             onTap: () {
               onselect("blogs");
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              EvaIcons.logOut,
+              size: 30,
+            ),
+            title: const Text(
+              "Log Out",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            onTap: () {
+              FirebaseAuth.instance.signOut().then((value) {
+                const ScaffoldMessenger(child: Text("Signed out sucessfully"));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SigninScreen(),
+                    ));
+              });
             },
           )
         ],

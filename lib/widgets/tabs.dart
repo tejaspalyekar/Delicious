@@ -6,7 +6,6 @@ import 'package:foodordering/screens/categories.dart';
 import 'package:foodordering/screens/filter.dart';
 import 'package:foodordering/screens/meal.dart';
 import 'package:foodordering/widgets/main_drawer.dart';
-import 'package:foodordering/widgets/meal_item.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Map<Filter, bool> kselectedFilters = {
@@ -35,7 +34,6 @@ class TabScreeen extends State<Tabs> {
 
   final List<Meal> fav = [];
   Map<Filter, bool> selectedFilters = kselectedFilters;
-
   void toast(String msg) {
     ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
