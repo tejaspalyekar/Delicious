@@ -74,7 +74,4 @@ Thank you for embarking on this culinary adventure with us. We hope you find ins
 Sincerely,
 The Delicious Team
 
----
-
-> Note: The above README is tailored for a Flutter mobile application based on your project link. If there are specific aspects or features of your app that you'd like to highlight, feel free to customize the content accordingly.
 
