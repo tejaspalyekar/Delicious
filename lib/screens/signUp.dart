@@ -26,9 +26,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
             "Sign Up",
             style: TextStyle(fontSize: 25),
           ),
-          backgroundColor: const Color.fromARGB(255, 109, 48, 2),
+          //backgroundColor: const Color.fromARGB(255, 109, 48, 2),
         ),
-        backgroundColor: const Color.fromARGB(255, 131, 57, 0),
+        // backgroundColor: const Color.fromARGB(255, 131, 57, 0),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(20.0),

@@ -23,7 +23,7 @@ class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 131, 57, 0),
+      //backgroundColor: const Color.fromARGB(255, 131, 57, 0),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Image.asset('assets/Signin.png',

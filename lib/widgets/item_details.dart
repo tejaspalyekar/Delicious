@@ -28,9 +28,10 @@ class ItemDetails extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            FadeInImage(
+            Hero(tag: meals.id, child: Image.network(meals.imageUrl)),
+            /*FadeInImage(
                 placeholder: MemoryImage(kTransparentImage),
-                image: NetworkImage(meals.imageUrl)),
+                image: NetworkImage()),*/
             const SizedBox(
               height: 20,
             ),
