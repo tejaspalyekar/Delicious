@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:foodordering/models/meals.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class ItemDetails extends StatelessWidget {
   ItemDetails({
@@ -20,7 +19,17 @@ class ItemDetails extends StatelessWidget {
             onPressed: () {
               ontoggle(meals);
             },
-            icon: const Icon(Icons.star),
+            icon: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                transitionBuilder: (child, animation) {
+                  return RotationTransition(
+                    turns: animation,
+                    child: child,
+                  );
+                },
+                child: const Icon(
+                  Icons.star, /*key: ValueKey(),*/
+                )),
             color: Colors.amber,
           )
         ],
