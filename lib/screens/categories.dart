@@ -6,8 +6,6 @@ import 'package:foodordering/widgets/category_grid_item.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:foodordering/screens/meal.dart';
 
-import '../widgets/textfield.dart';
-
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen(
       {super.key, required this.ontoggle, required this.availableMeals});
@@ -90,7 +88,13 @@ class _CategoryScreenState extends State<CategoryScreen>
                         const BorderSide(width: 0, style: BorderStyle.none)),
               ),
             ),
-            SizedBox(width: double.infinity, height: 240, child: image),
+            Card(
+                margin: const EdgeInsets.all(8),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                clipBehavior: Clip.hardEdge,
+                elevation: 3,
+                child: image),
             SizedBox(
                 height: 50,
                 child: Padding(
