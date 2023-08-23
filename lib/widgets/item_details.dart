@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodordering/models/meals.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class ItemDetails extends StatelessWidget {
+class ItemDetails extends StatefulWidget {
   ItemDetails({
     super.key,
     required this.meals,
@@ -9,15 +10,34 @@ class ItemDetails extends StatelessWidget {
   });
   final Meal meals;
   final void Function(Meal meals) ontoggle;
+
+  @override
+  State<ItemDetails> createState() => _ItemDetailsState();
+}
+
+class _ItemDetailsState extends State<ItemDetails> {
+  late YoutubePlayerController _controller;
+  @override
+  void initState() {
+    final videoId = YoutubePlayer.convertUrlToId(widget.meals.videoUrl);
+    _controller = YoutubePlayerController(
+        initialVideoId: videoId!,
+        flags: const YoutubePlayerFlags(
+          autoPlay: false,
+        ));
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(meals.title),
+        title: Text(widget.meals.title),
         actions: [
           IconButton(
             onPressed: () {
-              ontoggle(meals);
+              widget.ontoggle(widget.meals);
             },
             icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
@@ -37,7 +57,24 @@ class ItemDetails extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Hero(tag: meals.id, child: Image.network(meals.imageUrl)),
+            /*Hero(
+                tag: widget.meals.id,
+                child: Image.network(widget.meals.videoUrl)),*/
+            Hero(
+              tag: widget.meals.id,
+              child: Card(
+                margin: const EdgeInsets.all(10),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                clipBehavior: Clip.hardEdge,
+                elevation: 3,
+                child: YoutubePlayer(
+                  controller: _controller,
+                  showVideoProgressIndicator: true,
+                ),
+              ),
+            ),
+
             /*FadeInImage(
                 placeholder: MemoryImage(kTransparentImage),
                 image: NetworkImage()),*/
@@ -45,7 +82,9 @@ class ItemDetails extends StatelessWidget {
               height: 20,
             ),
             Text(
-              'Required Ingredients for making \n' '${meals.title}' ' are',
+              'Required Ingredients for making \n'
+              '${widget.meals.title}'
+              ' are',
               style: const TextStyle(
                   color: Color.fromARGB(255, 212, 78, 44),
                   fontSize: 20,
@@ -55,7 +94,7 @@ class ItemDetails extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            for (final ingredients in meals.ingredients)
+            for (final ingredients in widget.meals.ingredients)
               Text(
                 ingredients,
                 style: const TextStyle(color: Colors.white, fontSize: 15),
@@ -73,7 +112,7 @@ class ItemDetails extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            for (final steps in meals.steps)
+            for (final steps in widget.meals.steps)
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 8),

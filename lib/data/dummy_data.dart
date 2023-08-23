@@ -45,8 +45,7 @@ const availableCategories = [
     id: 'c6',
     title: 'Exotic',
     color: Colors.green,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
+    imageUrl: 'https://i.ytimg.com/vi/lrL-xvrRLAM/maxresdefault.jpg',
   ),
   Category(
     id: 'c7',
@@ -85,11 +84,12 @@ const dummyMeals = [
       'c1',
       'c2',
     ],
+    videoUrl: "https://youtu.be/VKizSq2_ZNs",
     title: 'Spaghetti with Tomato Sauce',
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
     imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+        'https://www.archanaskitchen.com/images/archanaskitchen/10-Brands/DelMonte-KidsRecipes/Spaghetti_Pasta_Recipe_In_Creamy_Tomato_Sauce_-_Kids_Recipes_Made_With_Del_Monte-3.jpg',
     duration: 20,
     ingredients: [
       '4 Tomatoes',
@@ -118,6 +118,7 @@ const dummyMeals = [
     categories: [
       'c2',
     ],
+    videoUrl: "https://youtu.be/4NN14mM3lI8",
     title: 'Toast Hawaii',
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
@@ -147,11 +148,12 @@ const dummyMeals = [
       'c2',
       'c3',
     ],
+    videoUrl: "https://youtu.be/hsF0pzZpXWY",
     title: 'Classic Hamburger',
     affordability: Affordability.pricey,
     complexity: Complexity.simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
+        'https://www.wjhl.com/wp-content/uploads/sites/98/2020/10/GettyImages-1149596729-1.jpg?w=2000&h=1440&crop=1',
     duration: 45,
     ingredients: [
       '300g Cattle Hack',
@@ -178,6 +180,7 @@ const dummyMeals = [
     categories: [
       'c4',
     ],
+    videoUrl: "https://youtu.be/0cqx3WWXJGs?si=y6oEdIQCttF1BO52",
     title: 'Wiener Schnitzel',
     affordability: Affordability.luxurious,
     complexity: Complexity.challenging,
@@ -215,6 +218,7 @@ const dummyMeals = [
           'c5',
       'c10',
     ],
+    videoUrl: "https://youtu.be/yaP7MoCLHxc",
     title: 'Salad with Smoked Salmon',
     affordability: Affordability.luxurious,
     complexity: Complexity.simple,
@@ -250,11 +254,11 @@ const dummyMeals = [
       'c6',
       'c10',
     ],
+    videoUrl: "https://youtu.be/_qEHxncYR1w",
     title: 'Delicious Orange Mousse',
     affordability: Affordability.affordable,
     complexity: Complexity.hard,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
+    imageUrl: 'https://i.ytimg.com/vi/lrL-xvrRLAM/maxresdefault.jpg',
     duration: 240,
     ingredients: [
       '4 Sheets of Gelatine',
@@ -285,6 +289,7 @@ const dummyMeals = [
     categories: [
       'c7',
     ],
+    videoUrl: "https://youtu.be/Pn15LITONhU",
     title: 'Pancakes',
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
@@ -316,6 +321,7 @@ const dummyMeals = [
     categories: [
       'c8',
     ],
+    videoUrl: "https://youtu.be/a03U45jFxOI",
     title: 'Creamy Indian Chicken Curry',
     affordability: Affordability.pricey,
     complexity: Complexity.challenging,
@@ -349,6 +355,7 @@ const dummyMeals = [
     categories: [
       'c9',
     ],
+    videoUrl: "https://youtu.be/FWqfkUEWOTg",
     title: 'Chocolate Souffle',
     affordability: Affordability.affordable,
     complexity: Complexity.hard,
@@ -400,11 +407,12 @@ const dummyMeals = [
       'c5',
       'c10',
     ],
+    videoUrl: "https://youtu.be/O--z_L2fEJk",
     title: 'Asparagus Salad with Cherry Tomatoes',
     affordability: Affordability.luxurious,
     complexity: Complexity.simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
+        'https://recipe30.com/wp-content/uploads/2016/10/asparagus-salad.jpg',
     duration: 30,
     ingredients: [
       'White and Green Asparagus',

@@ -44,6 +44,7 @@ dependencies:
   firebase_database: ^10.2.4
   shared_preferences: ^2.2.0
   flutter_riverpod: ^2.3.6
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,7 @@ flutter:
       - assets\northindian.jpg
       - assets\Signin.png
       - assets\Forgotpass.gif
+      - assets\dice.png
              
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

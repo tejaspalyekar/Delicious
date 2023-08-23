@@ -6,6 +6,8 @@ import 'package:foodordering/widgets/category_grid_item.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:foodordering/screens/meal.dart';
 
+import '../widgets/textfield.dart';
+
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen(
       {super.key, required this.ontoggle, required this.availableMeals});
@@ -19,6 +21,7 @@ class CategoryScreen extends StatefulWidget {
 class _CategoryScreenState extends State<CategoryScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationcontroller;
+  TextEditingController search = TextEditingController();
   late Image image;
 
   @override
@@ -63,53 +66,102 @@ class _CategoryScreenState extends State<CategoryScreen>
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(width: double.infinity, height: 240, child: image),
-          SizedBox(
-              height: 50,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(
-                  "What's in your mind?",
-                  style: GoogleFonts.niramit(
-                      fontSize: 25,
-                      color: const Color.fromARGB(255, 255, 255, 255),
-                      fontWeight: FontWeight.w600),
-                ),
-              )),
-          AnimatedBuilder(
-              animation: _animationcontroller,
-              child: SizedBox(
-                height: 300,
-                width: double.infinity,
-                child: GridView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.all(5),
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 250,
-                    childAspectRatio: 0.6,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            TextField(
+              controller: search,
+              style: TextStyle(
+                  color: const Color.fromARGB(255, 255, 255, 255)
+                      .withOpacity(0.9)),
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.search, color: Colors.white70),
+                labelText: "search here",
+                labelStyle: TextStyle(
+                    color: const Color.fromARGB(255, 255, 255, 255)
+                        .withOpacity(0.9)),
+                filled: true,
+                floatingLabelBehavior: FloatingLabelBehavior.never,
+                fillColor:
+                    const Color.fromARGB(249, 250, 250, 250).withOpacity(0.11),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                    borderSide:
+                        const BorderSide(width: 0, style: BorderStyle.none)),
+              ),
+            ),
+            SizedBox(width: double.infinity, height: 240, child: image),
+            SizedBox(
+                height: 50,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(
+                    "What's in your mind?",
+                    style: GoogleFonts.niramit(
+                        fontSize: 25,
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                        fontWeight: FontWeight.w600),
                   ),
+                )),
+            AnimatedBuilder(
+                animation: _animationcontroller,
+                child: Column(
                   children: [
-                    for (final category in availableCategories)
-                      CategoryGrid(
-                          category: category,
-                          onselect: () => onclick(context, category))
+                    SizedBox(
+                      height: 300,
+                      width: double.infinity,
+                      child: GridView(
+                        scrollDirection: Axis.horizontal,
+                        padding: const EdgeInsets.all(5),
+                        gridDelegate:
+                            const SliverGridDelegateWithMaxCrossAxisExtent(
+                          maxCrossAxisExtent: 250,
+                          childAspectRatio: 0.6,
+                          crossAxisSpacing: 20,
+                          mainAxisSpacing: 20,
+                        ),
+                        children: [
+                          for (final category in availableCategories)
+                            CategoryGrid(
+                                category: category,
+                                onselect: () => onclick(context, category))
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Roll the Dice for Your Next Delight!",
+                      style: GoogleFonts.niramit(
+                          fontSize: 21,
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                          fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Card(
+                        margin: const EdgeInsets.all(11),
+                        color: Color.fromARGB(146, 26, 13, 5),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        clipBehavior: Clip.hardEdge,
+                        elevation: 3,
+                        child: Image.asset("assets/dice.png"))
                   ],
                 ),
-              ),
-              builder: (context, child) => SlideTransition(
-                    position: Tween(
-                            begin: const Offset(0, 0.3),
-                            end: const Offset(0, 0))
-                        .animate(CurvedAnimation(
-                            parent: _animationcontroller,
-                            curve: Curves.bounceInOut)),
-                    child: child,
-                  )),
-        ],
+                builder: (context, child) => SlideTransition(
+                      position: Tween(
+                              begin: const Offset(0, 0.3),
+                              end: const Offset(0, 0))
+                          .animate(CurvedAnimation(
+                              parent: _animationcontroller,
+                              curve: Curves.bounceInOut)),
+                      child: child,
+                    )),
+          ],
+        ),
       ),
     ));
   }
