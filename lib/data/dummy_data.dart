@@ -100,13 +100,13 @@ const dummyMeals = [
       'Cheese (optional)'
     ],
     steps: [
-      'Cut the tomatoes and the onion into small pieces.',
-      'Boil some water - add salt to it once it boils.',
-      'Put the spaghetti into the boiling water - they should be done in about 10 to 12 minutes.',
-      'In the meantime, heaten up some olive oil and add the cut onion.',
-      'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
-      'The sauce will be done once the spaghetti are.',
-      'Feel free to add some cheese on top of the finished dish.'
+      '1) Cut the tomatoes and the onion into small pieces.',
+      '2) Boil some water - add salt to it once it boils.',
+      '3) Put the spaghetti into the boiling water - they should be done in about 10 to 12 minutes.',
+      '4) In the meantime, heaten up some olive oil and add the cut onion.',
+      '5) After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
+      '6) The sauce will be done once the spaghetti are.',
+      '7) Feel free to add some cheese on top of the finished dish.'
     ],
     isGlutenFree: false,
     isVegan: true,
@@ -133,9 +133,9 @@ const dummyMeals = [
       'Butter'
     ],
     steps: [
-      'Butter one side of the white bread',
-      'Layer ham, the pineapple and cheese on the white bread',
-      'Bake the toast for round about 10 minutes in the oven at 200°C'
+      '1) Butter one side of the white bread',
+      '2) Layer ham, the pineapple and cheese on the white bread',
+      '3) Bake the toast for round about 10 minutes in the oven at 200°C'
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -164,11 +164,11 @@ const dummyMeals = [
       '2 Burger Buns'
     ],
     steps: [
-      'Form 2 patties',
-      'Fry the patties for c. 4 minutes on each side',
-      'Quickly fry the buns for c. 1 minute on each side',
-      'Bruch buns with ketchup',
-      'Serve burger with tomato, cucumber and onion'
+      '1) Form 2 patties',
+      '2) Fry the patties for c. 4 minutes on each side',
+      '3) Quickly fry the buns for c. 1 minute on each side',
+      '4) Bruch buns with ketchup',
+      '5) Serve burger with tomato, cucumber and onion'
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -198,13 +198,13 @@ const dummyMeals = [
       'Lemon Slices'
     ],
     steps: [
-      'Tenderize the veal to about 2–4mm, and salt on both sides.',
-      'On a flat plate, stir the eggs briefly with a fork.',
-      'Lightly coat the cutlets in flour then dip into the egg, and finally, coat in breadcrumbs.',
-      'Heat the butter and oil in a large pan (allow the fat to get very hot) and fry the schnitzels until golden brown on both sides.',
-      'Make sure to toss the pan regularly so that the schnitzels are surrounded by oil and the crumbing becomes ‘fluffy’.',
-      'Remove, and drain on kitchen paper. Fry the parsley in the remaining oil and drain.',
-      'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
+      '1) Tenderize the veal to about 2–4mm, and salt on both sides.',
+      '2) On a flat plate, stir the eggs briefly with a fork.',
+      '3) Lightly coat the cutlets in flour then dip into the egg, and finally, coat in breadcrumbs.',
+      '4) Heat the butter and oil in a large pan (allow the fat to get very hot) and fry the schnitzels until golden brown on both sides.',
+      '5) Make sure to toss the pan regularly so that the schnitzels are surrounded by oil and the crumbing becomes ‘fluffy’.',
+      '6) Remove, and drain on kitchen paper. Fry the parsley in the remaining oil and drain.',
+      '7) Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -237,11 +237,11 @@ const dummyMeals = [
       'Salt and Pepper'
     ],
     steps: [
-      'Wash and cut salad and herbs',
-      'Dice the salmon',
-      'Process mustard, vinegar and olive oil into a dessing',
-      'Prepare the salad',
-      'Add salmon cubes and dressing'
+      '1) Wash and cut salad and herbs',
+      '2) Dice the salmon',
+      '3) Process mustard, vinegar and olive oil into a dessing',
+      '4) Prepare the salad',
+      '5) Add salmon cubes and dressing'
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -269,15 +269,15 @@ const dummyMeals = [
       'Orange Peel',
     ],
     steps: [
-      'Dissolve gelatine in pot',
-      'Add orange juice and sugar',
-      'Take pot off the stove',
-      'Add 2 tablespoons of yoghurt',
-      'Stir gelatin under remaining yoghurt',
-      'Cool everything down in the refrigerator',
-      'Whip the cream and lift it under die orange mass',
-      'Cool down again for at least 4 hours',
-      'Serve with orange peel',
+      '1) Dissolve gelatine in pot',
+      '2) Add orange juice and sugar',
+      '3) Take pot off the stove',
+      '4) Add 2 tablespoons of yoghurt',
+      '5) Stir gelatin under remaining yoghurt',
+      '6) Cool everything down in the refrigerator',
+      '7) Whip the cream and lift it under die orange mass',
+      '8) Cool down again for at least 4 hours',
+      '9) Serve with orange peel',
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -306,10 +306,10 @@ const dummyMeals = [
       '3 Tablespoons Butter, melted',
     ],
     steps: [
-      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
-      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
-      'Heat a lightly oiled griddle or frying pan over medium high heat.',
-      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+      '1) In a large bowl, sift together the flour, baking powder, salt and sugar.',
+      '2) Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
+      '3) Heat a lightly oiled griddle or frying pan over medium high heat.',
+      '4) Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -338,12 +338,12 @@ const dummyMeals = [
       '500ml Coconut Milk',
     ],
     steps: [
-      'Slice and fry the chicken breast',
-      'Process onion, garlic and ginger into paste and sauté everything',
-      'Add spices and stir fry',
-      'Add chicken breast + 250ml of water and cook everything for 10 minutes',
-      'Add coconut milk',
-      'Serve with rice'
+      '1) Slice and fry the chicken breast',
+      '2) Process onion, garlic and ginger into paste and sauté everything',
+      '3) Add spices and stir fry',
+      '4) Add chicken breast + 250ml of water and cook everything for 10 minutes',
+      '5) Add coconut milk',
+      '6) Serve with rice'
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -377,23 +377,23 @@ const dummyMeals = [
       '1 Tablespoon white Sugar',
     ],
     steps: [
-      'Preheat oven to 190°C. Line a rimmed baking sheet with parchment paper.',
-      'Brush bottom and sides of 2 ramekins lightly with 1 teaspoon melted butter; cover bottom and sides right up to the rim.',
-      'Add 1 tablespoon white sugar to ramekins. Rotate ramekins until sugar coats all surfaces.',
-      'Place chocolate pieces in a metal mixing bowl.',
-      'Place bowl over a pan of about 3 cups hot water over low heat.',
-      'Melt 1 tablespoon butter in a skillet over medium heat. Sprinkle in flour. Whisk until flour is incorporated into butter and mixture thickens.',
-      'Whisk in cold milk until mixture becomes smooth and thickens. Transfer mixture to bowl with melted chocolate.',
-      'Add salt and cayenne pepper. Mix together thoroughly. Add egg yolk and mix to combine.',
-      'Leave bowl above the hot (not simmering) water to keep chocolate warm while you whip the egg whites.',
-      'Place 2 egg whites in a mixing bowl; add cream of tartar. Whisk until mixture begins to thicken and a drizzle from the whisk stays on the surface about 1 second before disappearing into the mix.',
-      'Add 1/3 of sugar and whisk in. Whisk in a bit more sugar about 15 seconds.',
-      'whisk in the rest of the sugar. Continue whisking until mixture is about as thick as shaving cream and holds soft peaks, 3 to 5 minutes.',
-      'Transfer a little less than half of egg whites to chocolate.',
-      'Mix until egg whites are thoroughly incorporated into the chocolate.',
-      'Add the rest of the egg whites; gently fold into the chocolate with a spatula, lifting from the bottom and folding over.',
-      'Stop mixing after the egg white disappears. Divide mixture between 2 prepared ramekins. Place ramekins on prepared baking sheet.',
-      'Bake in preheated oven until scuffles are puffed and have risen above the top of the rims, 12 to 15 minutes.',
+      '1) Preheat oven to 190°C. Line a rimmed baking sheet with parchment paper.',
+      '2) Brush bottom and sides of 2 ramekins lightly with 1 teaspoon melted butter; cover bottom and sides right up to the rim.',
+      '3) Add 1 tablespoon white sugar to ramekins. Rotate ramekins until sugar coats all surfaces.',
+      '4) Place chocolate pieces in a metal mixing bowl.',
+      '5) Place bowl over a pan of about 3 cups hot water over low heat.',
+      '6) Melt 1 tablespoon butter in a skillet over medium heat. Sprinkle in flour. Whisk until flour is incorporated into butter and mixture thickens.',
+      '7) Whisk in cold milk until mixture becomes smooth and thickens. Transfer mixture to bowl with melted chocolate.',
+      '8) Add salt and cayenne pepper. Mix together thoroughly. Add egg yolk and mix to combine.',
+      '9) Leave bowl above the hot (not simmering) water to keep chocolate warm while you whip the egg whites.',
+      '10) Place 2 egg whites in a mixing bowl; add cream of tartar. Whisk until mixture begins to thicken and a drizzle from the whisk stays on the surface about 1 second before disappearing into the mix.',
+      '11) Add 1/3 of sugar and whisk in. Whisk in a bit more sugar about 15 seconds.',
+      '12) whisk in the rest of the sugar. Continue whisking until mixture is about as thick as shaving cream and holds soft peaks, 3 to 5 minutes.',
+      '13) Transfer a little less than half of egg whites to chocolate.',
+      '14) Mix until egg whites are thoroughly incorporated into the chocolate.',
+      '15) Add the rest of the egg whites; gently fold into the chocolate with a spatula, lifting from the bottom and folding over.',
+      '16) Stop mixing after the egg white disappears. Divide mixture between 2 prepared ramekins. Place ramekins on prepared baking sheet.',
+      '17) Bake in preheated oven until scuffles are puffed and have risen above the top of the rims, 12 to 15 minutes.',
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -422,13 +422,13 @@ const dummyMeals = [
       'Salt, Pepper and Olive Oil'
     ],
     steps: [
-      'Wash, peel and cut the asparagus',
-      'Cook in salted water',
-      'Salt and pepper the asparagus',
-      'Roast the pine nuts',
-      'Halve the tomatoes',
-      'Mix with asparagus, salad and dressing',
-      'Serve with Baguette'
+      '1) Wash, peel and cut the asparagus',
+      '2) Cook in salted water',
+      '3) Salt and pepper the asparagus',
+      '4) Roast the pine nuts',
+      '5) Halve the tomatoes',
+      '6) Mix with asparagus, salad and dressing',
+      '7) Serve with Baguette'
     ],
     isGlutenFree: true,
     isVegan: true,
