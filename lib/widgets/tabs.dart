@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:foodordering/data/dummy_data.dart';
 import 'package:foodordering/models/meals.dart';
 import 'package:foodordering/screens/blogs.dart';
 import 'package:foodordering/screens/categories.dart';
@@ -8,6 +7,7 @@ import 'package:foodordering/screens/filter.dart';
 import 'package:foodordering/screens/meal.dart';
 import 'package:foodordering/widgets/main_drawer.dart';
 import 'package:foodordering/widgets/meals_provider.dart';
+import 'package:foodordering/widgets/profile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Map<Filter, bool> kselectedFilters = {
@@ -113,6 +113,8 @@ class TabScreeen extends ConsumerState<Tabs> {
         ontoggle: ontoggle,
       );
       title = "Your Favourits";
+    } else if (idx == 2) {
+      screen = const profile();
     }
     return Scaffold(
       appBar: AppBar(
@@ -136,7 +138,8 @@ class TabScreeen extends ConsumerState<Tabs> {
           BottomNavigationBarItem(
               icon: Icon(Icons.set_meal_rounded), label: 'Category'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.star_border_outlined), label: 'Favourite')
+              icon: Icon(Icons.star_border_outlined), label: 'Favourite'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
     );
