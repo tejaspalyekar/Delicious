@@ -3,7 +3,7 @@ import 'package:foodordering/models/meals.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class ItemDetails extends StatefulWidget {
-  ItemDetails({
+  const ItemDetails({
     super.key,
     required this.meals,
     required this.ontoggle,
@@ -17,6 +17,7 @@ class ItemDetails extends StatefulWidget {
 
 class _ItemDetailsState extends State<ItemDetails> {
   late YoutubePlayerController _controller;
+  int count = 0;
   @override
   void initState() {
     final videoId = YoutubePlayer.convertUrlToId(widget.meals.videoUrl);
@@ -94,11 +95,26 @@ class _ItemDetailsState extends State<ItemDetails> {
             const SizedBox(
               height: 20,
             ),
-            for (final ingredients in widget.meals.ingredients)
-              Text(
-                ingredients,
-                style: const TextStyle(color: Colors.white, fontSize: 15),
+            Card(
+              color: const Color.fromARGB(216, 219, 219, 219),
+              child: Column(
+                children: [
+                  for (final ingredients in widget.meals.ingredients)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 3),
+                      child: Text(
+                        ingredients,
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ),
+                ],
               ),
+            ),
             const SizedBox(
               height: 25,
             ),
@@ -112,16 +128,40 @@ class _ItemDetailsState extends State<ItemDetails> {
             const SizedBox(
               height: 15,
             ),
-            for (final steps in widget.meals.steps)
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                child: Text(
-                  steps,
-                  style: const TextStyle(color: Colors.white, fontSize: 15),
-                  textAlign: TextAlign.center,
-                ),
+            Card(
+              margin: const EdgeInsets.symmetric(horizontal: 10),
+              color: const Color.fromARGB(216, 219, 219, 219),
+              child: Column(
+                children: [
+                  for (final steps in widget.meals.steps)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 3),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(steps,
+                                style: const TextStyle(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                                textDirection: TextDirection.ltr,
+                                textAlign: TextAlign.center),
+                          ),
+                        ],
+                      ),
+                    ),
+                ],
               ),
+            )
+            /*for (final steps in widget.meals.steps)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                child: Text(steps,
+                    style: const TextStyle(color: Colors.white, fontSize: 15),
+                    textDirection: TextDirection.ltr,
+                    textAlign: TextAlign.justify),
+              ),*/
           ],
         ),
       ),
