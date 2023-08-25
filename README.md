@@ -1,6 +1,6 @@
 # Delicious - Your Culinary Adventure
 
-![Delicious](https://github.com/tejaspalyekar/Delicious/blob/main/delicious_cover.png)
+![Delicious](https://github.com/tejaspalyekar/Delicious/blob/main/delicious_cover_.png)
 
 Welcome to Delicious - your ultimate culinary adventure on your mobile device!
 
