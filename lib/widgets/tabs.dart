@@ -115,6 +115,7 @@ class TabScreeen extends ConsumerState<Tabs> {
       title = "Your Favourits";
     } else if (idx == 2) {
       screen = const profile();
+      title = "Profile";
     }
     return Scaffold(
       appBar: AppBar(

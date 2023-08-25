@@ -25,7 +25,7 @@ const availableCategories = [
     title: 'Hamburgers',
     color: Colors.orange,
     imageUrl:
-        'https://static.onecms.io/wp-content/uploads/sites/19/2005/06/22/classic-burgers-u.jpg',
+        'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?cs=srgb&dl=pexels-valeria-boltneva-1639557.jpg&fm=jpg',
   ),
   Category(
     id: 'c4',
@@ -89,7 +89,7 @@ const dummyMeals = [
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
     imageUrl:
-        'https://www.archanaskitchen.com/images/archanaskitchen/10-Brands/DelMonte-KidsRecipes/Spaghetti_Pasta_Recipe_In_Creamy_Tomato_Sauce_-_Kids_Recipes_Made_With_Del_Monte-3.jpg',
+        'https://familystylefood.com/wp-content/uploads/2022/07/Bucatini-All-Amatriciana.jpg',
     duration: 20,
     ingredients: [
       '4 Tomatoes',
@@ -153,7 +153,7 @@ const dummyMeals = [
     affordability: Affordability.pricey,
     complexity: Complexity.simple,
     imageUrl:
-        'https://www.wjhl.com/wp-content/uploads/sites/98/2020/10/GettyImages-1149596729-1.jpg?w=2000&h=1440&crop=1',
+        'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?cs=srgb&dl=pexels-valeria-boltneva-1639557.jpg&fm=jpg',
     duration: 45,
     ingredients: [
       '300g Cattle Hack',
@@ -412,7 +412,7 @@ const dummyMeals = [
     affordability: Affordability.luxurious,
     complexity: Complexity.simple,
     imageUrl:
-        'https://recipe30.com/wp-content/uploads/2016/10/asparagus-salad.jpg',
+        'https://www.cookingclassy.com/wp-content/uploads/2016/03/asparagus_salad17..jpg',
     duration: 30,
     ingredients: [
       'White and Green Asparagus',
