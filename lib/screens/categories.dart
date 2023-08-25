@@ -67,27 +67,34 @@ class _CategoryScreenState extends State<CategoryScreen>
       child: SingleChildScrollView(
         child: Column(
           children: [
-            TextField(
-              controller: search,
-              style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255)
-                      .withOpacity(0.9)),
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search, color: Colors.white70),
-                labelText: "search here",
-                labelStyle: TextStyle(
+            const SizedBox(height: 15),
+            Container(
+              height: 45,
+              margin: const EdgeInsets.symmetric(horizontal: 10),
+              child: TextField(
+                controller: search,
+                style: TextStyle(
                     color: const Color.fromARGB(255, 255, 255, 255)
                         .withOpacity(0.9)),
-                filled: true,
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                fillColor:
-                    const Color.fromARGB(249, 250, 250, 250).withOpacity(0.11),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                    borderSide:
-                        const BorderSide(width: 0, style: BorderStyle.none)),
+                decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.search_sharp)),
+                  labelText: "search here",
+                  labelStyle: TextStyle(
+                      color: const Color.fromARGB(255, 255, 255, 255)
+                          .withOpacity(0.9)),
+                  filled: true,
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  fillColor: const Color.fromARGB(249, 250, 250, 250)
+                      .withOpacity(0.11),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                      borderSide:
+                          const BorderSide(width: 0, style: BorderStyle.none)),
+                ),
               ),
             ),
+            const SizedBox(height: 10),
             Card(
                 margin: const EdgeInsets.all(8),
                 shape: RoundedRectangleBorder(
@@ -145,14 +152,19 @@ class _CategoryScreenState extends State<CategoryScreen>
                     const SizedBox(
                       height: 10,
                     ),
-                    Card(
-                        margin: const EdgeInsets.all(11),
-                        color: Color.fromARGB(146, 26, 13, 5),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        clipBehavior: Clip.hardEdge,
-                        elevation: 3,
-                        child: Image.asset("assets/dice.png"))
+                    GestureDetector(
+                      onTap: () {
+                        print("ok");
+                      },
+                      child: Card(
+                          margin: const EdgeInsets.all(11),
+                          color: const Color.fromARGB(146, 26, 13, 5),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          clipBehavior: Clip.hardEdge,
+                          elevation: 3,
+                          child: Image.asset("assets/dice.png")),
+                    )
                   ],
                 ),
                 builder: (context, child) => SlideTransition(
